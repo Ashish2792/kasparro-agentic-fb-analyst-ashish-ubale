@@ -75,6 +75,7 @@ T6 ──▶ 📦 7. AGGREGATOR
           ✔ creatives.json
           ✔ report.md (human readable)
 
+```mermaid
 flowchart TD
 
 A[📥 User Query] --> B[🧭 Planner Agent]
@@ -91,7 +92,7 @@ T2 --> D[🕵 Insight Agent]
 D --> T3[T3 ▶ metric_evaluation]
 T3 --> E[📏 Metric Evaluator]
 
-%% ========= Stage 4: Creative Evaluation (CHS) =========
+%% ========= Stage 4: Creative Evaluation =========
 C --> T4[T4 ▶ creative_evaluation]
 T4 --> F[🎨 Creative Evaluator (CHS)]
 
@@ -100,14 +101,15 @@ E --> T5[T5 ▶ creative_generation]
 F --> T5
 T5 --> G[🧪 Creative Generator]
 
-%% ========= Stage 6: Aggregation & Report Output =========
+%% ========= Stage 6: Final Aggregation =========
 G --> T6[T6 ▶ final_aggregation]
 E --> T6
 F --> T6
 T6 --> H[📦 Aggregator / Output Writer]
 
-%% ========= Final Artifacts =========
+%% ========= Output Artifacts =========
 H -->|insights.json| I[[📝 Insights]]
-H -->|creatives.json| J[[🎨 Creative Ideas]]
+H -->|creatives.json| J[[🎨 Creative Variants]]
 H -->|report.md| K[[📄 Final Report]]
-H -->|run_log.json| L[[📂 Logs]]
+H -->|run_log.json| L[[📂 Execution Logs]]
+```
